@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
-import CustomCursor from "@/components/CustomCursor";
 
 export default function RootLayout({
   children,
@@ -27,8 +26,6 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-body bg-[var(--color-paper)] text-black">
-        <CustomCursor />
-        
         <SmoothScroll>
           <Navbar />
           <div className="flex-1">
