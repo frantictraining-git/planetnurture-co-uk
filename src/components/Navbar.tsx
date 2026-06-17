@@ -105,7 +105,7 @@ export default function Navbar() {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 z-[9998] bg-[#0c1a13]/95 text-white flex flex-col justify-center px-8 md:px-24 backdrop-blur-2xl"
+            className="fixed inset-0 z-[9998] bg-[#0c1a13]/95 text-white flex flex-col justify-between p-8 md:p-24 backdrop-blur-2xl"
           >
             {/* Ambient Eco Glows */}
             <div className="absolute top-1/4 right-1/4 w-[50vw] h-[50vw] rounded-full bg-[#52b788]/10 blur-[130px] pointer-events-none animate-pulse-soft" />
@@ -114,7 +114,10 @@ export default function Navbar() {
             {/* Grain Overlay */}
             <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 400 400%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')]"></div>
 
-            <nav className="flex flex-col gap-6 md:gap-10 relative z-10">
+            {/* Top Spacer to push below header */}
+            <div className="h-16 md:h-20 shrink-0" />
+
+            <nav className="flex flex-col gap-6 md:gap-10 my-auto relative z-10">
               {links.map((link, i) => (
                 <div key={link.title} className="overflow-hidden py-2">
                   <motion.div
@@ -141,7 +144,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="absolute bottom-12 left-8 md:left-24 right-8 md:right-24 flex justify-between text-[10px] font-mono uppercase tracking-[0.3em] text-white/30 relative z-10"
+              className="flex justify-between text-[10px] font-mono uppercase tracking-[0.3em] text-white/30 pt-8 border-t border-white/5 w-full shrink-0 relative z-10"
             >
               <span>Environment & Eco Journal</span>
               <a href="mailto:hello@planetnurture.co.uk" className="hover:text-white transition-colors">hello@planetnurture.co.uk</a>
