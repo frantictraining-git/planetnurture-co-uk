@@ -195,10 +195,10 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
   // We look for the first post marked isFeatured. If none, fallback to the first post overall.
   const featuredArticle = posts.find((p: any) => p.isFeatured) || (posts.length > 0 ? posts[0] : null);
 
-  // 2. Identify 5 Recent Articles for the Side Panel
-  // Sorted by date, up to 5 articles. (We can include all except the main hero, or just the 5 overall).
-  // Let's take the first 5 articles.
-  const recentArticles = posts.slice(0, 5);
+  // 2. Identify 5 Recent Articles for the Side Panel (excluding the featured article)
+  const recentArticles = posts
+    .filter((p: any) => p._id !== featuredArticle?._id)
+    .slice(0, 5);
 
   // 3. For the main feed, we display:
   // - A main hero post (the very first post in the filtered list)

@@ -289,6 +289,19 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     isUsingFallback = true;
   }
 
+  if (isUsingFallback) {
+    const allMockPosts = Object.values(MOCK_POSTS);
+    sidebarData = {
+      categories: FALLBACK_SIDEBAR.categories,
+      featured: allMockPosts
+        .filter((p: any) => p.isFeatured && p.slug.current !== resolvedParams.slug)
+        .slice(0, 4),
+      recent: allMockPosts
+        .filter((p: any) => p.slug.current !== resolvedParams.slug)
+        .slice(0, 4)
+    };
+  }
+
   if (!post) {
     notFound();
   }
