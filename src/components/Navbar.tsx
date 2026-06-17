@@ -64,7 +64,7 @@ export default function Navbar() {
     { title: "The Journal", href: "/" },
     { title: "About", href: "/about" },
     { title: "Contact", href: "/contact" },
-    { title: "Studio Portal", href: "/studio" }
+    { title: "Studio Portal", href: "/studio/structure/post" }
   ];
 
   return (
