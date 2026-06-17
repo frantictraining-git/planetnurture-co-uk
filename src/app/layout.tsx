@@ -6,10 +6,6 @@ export const metadata: Metadata = {
   description: "Planet Nurture is a premium editorial-first publication covering environmental issues, green technology, and ecological sustainability.",
 };
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import SmoothScroll from "@/components/SmoothScroll";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,13 +22,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-body bg-[var(--color-paper)] text-black">
-        <SmoothScroll>
-          <Navbar />
-          <div className="flex-1">
-            {children}
-          </div>
-          <Footer />
-        </SmoothScroll>
+        {children}
       </body>
     </html>
   );
